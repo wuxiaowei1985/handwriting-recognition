@@ -6,9 +6,8 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 import numpy as np
 import tkinter as tk
-from PIL import Image, ImageDraw, ImageOps, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 import os
-import cv2
 
 
 # 定义一个简单但有效的CNN模型
@@ -273,7 +272,7 @@ class DrawingApp:
 
 
 # 主程序
-if __name__ == "__main__":
+def main():
     # 检查是否有预训练模型，如果没有则训练一个
     try:
         model = load_model()
@@ -287,3 +286,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = DrawingApp(root, model)
     root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
